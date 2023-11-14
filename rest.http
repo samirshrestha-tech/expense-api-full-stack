@@ -1,0 +1,60 @@
+# api testing for our transaction history
+
+@rootapi = http://localhost:8000
+
+@userapi = http://localhost:8000/api/v1/user 
+
+
+@transapi = http://localhost:8000/api/v1/trans
+
+
+
+#check server status
+
+###
+GET http://localhost:8000
+
+
+
+###
+GET {{rootapi}}
+
+###trans api 
+GET {{transapi}}
+
+
+###userapi
+GET {{userapi}}
+
+
+###userapi
+POST  {{userapi}}
+Content-Type: application/json
+
+{
+    "name" : "samir",
+    "password": "1234",
+    "email": "a@bw.com"
+}
+###login 
+POST  {{userapi}}/login
+Content-Type: application/json
+
+{
+    "email": "a@a.com",
+    "password": 12342,
+   
+}
+
+###userapi
+PATCH  {{userapi}}
+
+###userapi
+PUT  {{userapi}}
+
+###userapi
+DELETE  {{userapi}}
+
+
+
+
